@@ -1,0 +1,27 @@
+<div class="header">
+  <div
+    class="wrapper"
+  >
+    <h1 class="tui-text_h3 title">Сервисный Центр</h1>
+    <tui-tabs-with-more
+      class="tabs"
+      [activeItemIndex]="activeItemIndex"
+      [moreContent]="more"
+    >
+      <ng-container *ngFor="let tab of tabs">
+        <ng-container>
+          <button
+            *tuiItem
+            tuiTab
+            (click)="onClick(tab)"
+          >
+            {{ tab }}
+          </button>
+        </ng-container>
+      </ng-container>
+    </tui-tabs-with-more>
+  </div>
+  <ng-template #more>
+    <tui-svg src="tuiIconMoreHorizontalLarge"></tui-svg>
+  </ng-template>
+</div>
