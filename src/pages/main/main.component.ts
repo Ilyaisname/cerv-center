@@ -6,7 +6,9 @@ import {ContactsComponent} from '../../shared/components/contacts/contacts.compo
 import {ContactsDataService} from '../../shared/services/contacts-data.service';
 import {TuiLetModule} from '@taiga-ui/cdk';
 import {Observable} from 'rxjs';
-import {IContacts} from '../../shared/interfaces';
+import {IContacts, IGreetings} from '../../shared/interfaces';
+import {GreetingsComponent} from '../../shared/components';
+import {GreetingsDataService} from '../../shared/services/greetings-data.service';
 
 @Component({
   selector: 'app-main',
@@ -17,12 +19,15 @@ import {IContacts} from '../../shared/interfaces';
     TuiIconModule,
     ContactsComponent,
     TuiLetModule,
-    AsyncPipe
+    AsyncPipe,
+    GreetingsComponent
   ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.less'
 })
 export class MainComponent {
+  greetingsData$: Observable<IGreetings> = inject(GreetingsDataService).getGreetingsDataForMain();
+  contactsData$: Observable<IContacts> = inject(ContactsDataService).getContacts();
   public advantages: IAdvantage[] = [
     {
       id: 0,
@@ -95,7 +100,6 @@ export class MainComponent {
       about: 'Средний опыт инженера',
     },
   ];
-  public contactsData$: Observable<IContacts> = inject(ContactsDataService).getContacts();
 
 
 }

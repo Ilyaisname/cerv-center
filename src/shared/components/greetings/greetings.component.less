@@ -1,0 +1,75 @@
+:host {
+  display: block;
+}
+
+.greetings-block {
+  padding-top: 5.5rem;
+
+  .company-name {
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      width: 1%;
+      height: 1%;
+      background-color: #FA7515;
+      opacity: 0.214;
+      border-radius: 50%;
+      box-shadow: 0 0 30rem 15rem #FA7515;
+      z-index: -1;
+    }
+
+    .name {
+      padding-bottom: 114px;
+    }
+
+    .text {
+      padding-left: 104px;
+      position: relative;
+    }
+
+    .text:before {
+      content: '';
+      position: absolute;
+      top: 22px;
+      left: 0;
+      width: 76px;
+      height: 1px;
+      background-color: #000000;
+    }
+
+    .action {
+      display: flex;
+      justify-content: center;
+
+      button {
+        background: #1D1E25;
+      }
+    }
+  }
+
+  .images {
+    position: relative;
+
+    img {
+      object-fit: cover;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: 30px;
+      bottom: 30px;
+      width: 1%;
+      height: 1%;
+      background-color: #E2F8F0;
+      opacity: .75;
+      border-radius: 50%;
+      box-shadow: 0 0 30rem 15rem #E2F8F0;
+      z-index: -1;
+    }
+  }
+}
