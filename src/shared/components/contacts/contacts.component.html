@@ -1,0 +1,14 @@
+<div class="tui-row tui-row_adaptive contact-block">
+  <div class="map tui-col_lg-7 tui-col_md-7 tui-col_xs-12">
+    <img [src]="imagePath" alt="карта">
+  </div>
+  <div class="contacts tui-col_lg-5 tui-col_md-5 tui-col_xs-12">
+    <div class="address tui-text_body-m-2 tui-space_top-2">{{address}}</div>
+    <div class="work-mode tui-text_body-m-2 tui-space_top-2">{{workMode}}</div>
+    <div class="work-time tui-text_body-m-2 tui-space_top-2">{{workTime}}</div>
+    @for (phone of phoneNumbers; track phone.id) {
+      <div class="phone tui-text_body-m-2 tui-space_top-2">{{phone.phoneNumber}}</div>
+    }
+    <div class="mail tui-text_body-m-2 tui-space_top-2">{{mail}}</div>
+  </div>
+</div>
