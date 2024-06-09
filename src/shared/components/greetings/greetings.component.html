@@ -1,1 +1,24 @@
-<p>greetings works!</p>
+<div class="tui-row tui-row_adaptive greetings-block">
+  <div class="company-name tui-col_xs-12" [ngClass]="companyNameStyleGreed">
+    <h2 class="name tui-text_h2"
+        [innerHTML]="headerText | safe: 'html'"
+    ></h2>
+    <div class="text tui-text_body-l"
+         [ngClass]="imagePath ? '' : 'tui-space_bottom-16'"
+         [innerHTML]="text | safe: 'html'">
+    </div>
+    @if (repairRequest) {
+      <div class="action tui-space_top-5 tui-space_bottom-16">
+        <button tuiButton type="button"
+                class="tui-space_bottom-3 tui-space_top-5">
+          Записаться на ремонт
+        </button>
+      </div>
+    }
+  </div>
+  @if (imagePath) {
+    <div class="images tui-col_lg-5 tui-col_md-5 tui-col_xs-12">
+      <img class="image-first" [ngSrc]="imagePath" alt="picture-1" fill>
+    </div>
+  }
+</div>

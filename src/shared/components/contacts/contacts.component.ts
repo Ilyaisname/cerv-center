@@ -1,10 +1,13 @@
 import {ChangeDetectionStrategy, Component, Input} from '@angular/core';
 import {ArrayHelpers} from '../../helpers';
+import {NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-contacts',
   standalone: true,
-  imports: [],
+  imports: [
+    NgOptimizedImage
+  ],
   templateUrl: './contacts.component.html',
   styleUrl: './contacts.component.less',
   changeDetection: ChangeDetectionStrategy.OnPush
