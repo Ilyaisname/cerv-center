@@ -1,0 +1,169 @@
+@import '@taiga-ui/core/styles/taiga-ui-local.less';
+
+:host {
+  display: block;
+}
+
+.greetings-block {
+  padding-top: 5.5rem;
+
+  .company-name {
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      width: 1%;
+      height: 1%;
+      background-color: #FA7515;
+      opacity: 0.214;
+      border-radius: 50%;
+      box-shadow: 0 0 30rem 15rem #FA7515;
+      z-index: -1;
+    }
+
+    .name {
+      padding-bottom: 114px;
+    }
+
+    .text {
+      padding-left: 104px;
+      position: relative;
+    }
+
+    .text:before {
+      content: '';
+      position: absolute;
+      top: 22px;
+      left: 0;
+      width: 76px;
+      height: 1px;
+      background-color: #000000;
+    }
+
+    .action {
+      display: flex;
+      justify-content: center;
+
+      button {
+        background: #1D1E25;
+      }
+    }
+  }
+
+  .images {
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      right: 30px;
+      bottom: 30px;
+      width: 1%;
+      height: 1%;
+      background-color: #E2F8F0;
+      opacity: .75;
+      border-radius: 50%;
+      box-shadow: 0 0 30rem 15rem #E2F8F0;
+      z-index: -1;
+    }
+  }
+}
+
+.advantages-block {
+  padding-top: 88px;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -22.5%;
+    width: 100vw;
+    height: 100%;
+    z-index: 2;
+    background-color: #1D1E25;
+  }
+
+  .header {
+    color: #ffffff;
+    z-index: 3;
+  }
+
+  .text {
+    color: #7E8492;
+  }
+
+  .advantages {
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 3;
+
+    .advantage {
+      display: flex;
+      flex-direction: column;
+      .tui-space(bottom, 12);
+    }
+  }
+}
+
+.quality-block {
+  padding-top: 4.5rem;
+
+  .text {
+    color: #7E8492;
+  }
+
+  .quality {
+    display: flex;
+    align-items: center;
+
+    .description {
+      color: #1D1E25;
+      font-weight: bold;
+    }
+  }
+}
+
+.statistic-block {
+  padding-top: 4.5rem;
+
+  .statistic {
+    display: flex;
+    justify-content: space-between;
+
+    .statistic-card {
+      position: relative;
+
+      .statistic-about {
+        color: #7E8492;
+        padding-bottom: 15px;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 10%;
+        right: -2.7rem;
+        width: 1px;
+        height: 80%;
+        background-color: #CED1D8;
+
+      }
+
+      &:last-child {
+        &:after {
+          content: '';
+          width: 0;
+          height: 0;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+
+
