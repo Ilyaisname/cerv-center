@@ -2,7 +2,7 @@
   <div
     class="wrapper"
   >
-    <h1 class="tui-text_h3 title">Device</h1>
+    <h1 routerLink="/" class="tui-text_h3 title">Device</h1>
     <tui-tabs-with-more
       class="tabs"
       [activeItemIndex]="activeItemIndex"
@@ -13,9 +13,10 @@
           <button
             *tuiItem
             tuiTab
-            (click)="onClick(tab)"
+            [routerLink]="tab.url"
+            (click)="onClick(tab.name)"
           >
-            {{ tab }}
+            {{ tab.name }}
           </button>
         </ng-container>
       </ng-container>
