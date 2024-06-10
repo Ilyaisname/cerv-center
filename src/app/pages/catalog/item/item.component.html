@@ -1,8 +1,8 @@
 @if (item) {
-  <tui-island textAlign="center">
+  <tui-island>
     <h3 class="tui-island__title">{{ item.title }}</h3>
     <p class="tui-island__paragraph">{{ item.description }}</p>
-    <p class="tui-island__paragraph">
+    <p class="tui-island__paragraph price-align_left">
       <tui-money [value]="item.price"></tui-money>
     </p>
   </tui-island>

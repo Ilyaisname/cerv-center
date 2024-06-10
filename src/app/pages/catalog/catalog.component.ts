@@ -17,7 +17,7 @@ import {GreetingsComponent} from '../../shared/components';
     ItemComponent,
     TuiLetModule,
     AsyncPipe,
-    GreetingsComponent
+    GreetingsComponent,
   ],
   templateUrl: './catalog.component.html',
   styleUrl: './catalog.component.less'
