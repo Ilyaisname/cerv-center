@@ -2,6 +2,8 @@
   padding-top: 4.5rem;
 
   .map {
+    display: flex;
+
     .img-wrapper {
       display: block;
       position: relative;
@@ -16,5 +18,16 @@
   }
   .contacts {
     color: #7E8492;
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: .8rem;
+      border-bottom: 1px solid #AFB3BB;
+    }
+  }
+
+  .text_bold {
+    font-weight: bold;
   }
 }
