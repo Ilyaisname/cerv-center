@@ -1,42 +1,37 @@
-<div class="wrapper foo">
-  <div class="foo__info-block">
-    <div class="company-logo">
-      <div class="logo">
-        <div class="icon">
-          <img ngSrc="favicon.png" alt="logo image" height="48" width="48">
-        </div>
-        <div class="name">
-          <h5 class="tui-text_h4">Device</h5>
-          <h6 class="tui-text_h6">Компьютерный центр</h6>
-        </div>
+<div class="tui-row tui-row_adaptive footer">
+  <div class="tui-col_md-5 company-logo">
+    <div class="logo">
+      <div class="icon tui-col_md-2">
+        <img ngSrc="favicon.png" alt="logo image" height="48" width="48">
       </div>
-      <p class="tui-text_body-m">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid deserunt dolores iure nam nemo nulla omnis optio praesentium rem unde.</p>
+      <div class="name tui-col_md-10">
+        <h5 class="tui-text_h4">Device</h5>
+        <h6 class="tui-text_body-m-2 text_bold">Компьютерный центр</h6>
+      </div>
     </div>
-    <div class="links-block">
-<!--      todo add for -->
-      <div class="links">
-        <h6 class="links-header tui-text_h6">Компания</h6>
-        <div class="link tui-text_body-m">Главня</div>
-        <div class="link tui-text_body-m">О Нас</div>
-        <div class="link tui-text_body-m">Новости</div>
-        <div class="link tui-text_body-m">Каталог услуг</div>
-      </div>
-      <div class="links">
-        <h6 class="links-header tui-text_h6">Контакты</h6>
-        <div class="link tui-text_body-m">Главня</div>
-        <div class="link tui-text_body-m">О Нас</div>
-        <div class="link tui-text_body-m">Новости</div>
-        <div class="link tui-text_body-m">Каталог услуг</div>
-      </div>
-      <div class="links">
-        <h6 class="links-header tui-text_h6">Компания</h6>
-        <div class="link tui-text_body-m">Главня</div>
-        <div class="link tui-text_body-m">О Нас</div>
-        <div class="link tui-text_body-m">Новости</div>
-        <div class="link tui-text_body-m">Каталог услуг</div>
+    <p class="tui-text_body-m-2 tui-space_top-5 tui-space_left-5 text_grey">Делаем вашу технику лучше каждый день!</p>
+  </div>
+  <div class="tui-col_md-7 links-block">
+    <div class="links tui-col_md-4">
+      <h6 class="links-header tui-text_body-l text_bold">Полезные ссылки</h6>
+      @for (tab of tabs; track tab.name) {
+        <div class="link tui-text_body-m tui-space_top-4 text_bold" [routerLink]="tab.url">{{ tab.name }}</div>
+      }
+    </div>
+    <div class="contacts tui-col_md-8">
+      <h6 class="links-header tui-text_body-l text_bold">Контакты</h6>
+      <div class="link tui-text_body-s-2 text_bold text_grey">Адрес: г. Саранск, Проспект Ленина, 34, 1 этаж</div>
+      <div class="link tui-text_body-s-2 text_bold text_grey">Телефон: +7‒937‒517‒00‒77 +7 (8342) 37‒47‒76</div>
+      <div class="link tui-text_body-s-2 text_bold text_grey">Email: deviceserviceRM&#64;mail.ru</div>
+      <div class="work-time tui-space_top-2">
+        <h6 class="links-header tui-text_body-l text_bold">Рабочие часы</h6>
+        <div class="link tui-text_body-s-2 text_bold text_grey">Понедельник - Суббота: 09:00 – 18:00</div>
+        <div class="link tui-text_body-s-2 text_bold text_grey">Воскресенье: Выходной</div>
       </div>
     </div>
   </div>
-  <div class="foo__сopyright">© Copyright 2024 Все права защищены</div>
+</div>
+<div class="tui-row tui-row_adaptive сopyright">
+  <div>© 2024 Device. Все права защищены</div>
 </div>
 
