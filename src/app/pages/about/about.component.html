@@ -1,0 +1,59 @@
+<ng-container *tuiLet="{
+  greetingsData: greetingsData$ | async,
+  contactsData: contactsData$ | async
+} as data">
+<!-- greetings -->
+  <app-greetings
+    [headerText]="data.greetingsData!.headerText"
+    [text]="data.greetingsData!.text"
+  />
+<!-- end greetings -->
+
+<!-- post slider -->
+  <app-post-slider/>
+<!-- end post slider  -->
+
+<!--  text block -->
+  <ng-container *ngTemplateOutlet="textBlock, context: {textBlockData: {
+    header: headerFirstBlock,
+    text: textFirstBlock
+  }}"></ng-container>
+<!--  end text block -->
+
+<!--  employee slider -->
+  <app-employee-slider/>
+<!-- end  employee slider -->
+
+<!-- text block  -->
+  <ng-container *ngTemplateOutlet="textBlock, context: {textBlockData: {
+    header: headerSecondBlock,
+    text: textSecondBlock,
+    seeOpenVacancy: true
+  }}"></ng-container>
+<!--  end text block -->
+
+<!-- contacts -->
+  <app-contacts
+    imagePath="assets/img/map.png"
+    [phoneNumbers]="data.contactsData?.phoneNumbers"
+    [address]="data.contactsData?.address"
+    [workTime]="data.contactsData?.workTime"
+    [workMode]="data.contactsData?.workMode"
+    [mail]="data.contactsData?.email"
+  />
+<!-- end contacts -->
+</ng-container>
+
+<ng-template #textBlock let-data="textBlockData">
+  <div class="tui-row tui-row_adaptive tui-space_top-10 information">
+    <div class="tui-col_lg-7 tui-col_md-6 tui-col_xs-12">
+      <h3 class="tui-text_h3" [innerHtml]="data.header | safe: 'html'"></h3>
+    </div>
+    <div class="tui-col_lg-5 tui-col_md-6 tui-col_xs-12">
+      <div class="tui-text_body-m" [innerHtml]="data.text | safe: 'html'"></div>
+      @if (data.seeOpenVacancy) {
+        <button tuiButton class="tui-space_top-4">Вакансии</button>
+      }
+    </div>
+  </div>
+</ng-template>

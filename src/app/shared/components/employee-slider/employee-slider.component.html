@@ -1,0 +1,28 @@
+@if (inBrowser) {
+  <div class="tui-row tui-row_adaptive tui-space_top-12 slider">
+    <tui-carousel
+      class="tui-col_lg-12 tui-col_md-12 tui-col_xs-12"
+      [itemsCount]="3"
+      [(index)]="index"
+    >
+      <ng-container *ngFor="let item of items">
+        <tui-island
+          *tuiItem
+          class="item"
+        >
+          <div class="img-container">
+            <img [ngSrc]="item.imgSrc" alt="pic" fill>
+          </div>
+          <div class="tui-island__content">{{ item.name }}</div>
+        </tui-island>
+      </ng-container>
+    </tui-carousel>
+    <tui-pagination
+      size="s"
+      class="tui-space_top-3 tui-col_lg-12 tui-col_md-12 tui-col_xs-12"
+      [index]="rounded"
+      [length]="items.length / itemsCount"
+      (indexChange)="onIndex($event)"
+    ></tui-pagination>
+  </div>
+}

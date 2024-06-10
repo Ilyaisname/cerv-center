@@ -2,13 +2,13 @@ import {Component, inject} from '@angular/core';
 import {AsyncPipe, NgOptimizedImage} from '@angular/common';
 import {TuiButtonModule} from '@taiga-ui/core';
 import {TuiIconModule} from '@taiga-ui/experimental';
-import {ContactsComponent} from '../../shared/components/contacts/contacts.component';
-import {ContactsDataService} from '../../shared/services/contacts-data.service';
 import {TuiLetModule} from '@taiga-ui/cdk';
 import {Observable} from 'rxjs';
+import {ContactsComponent, GreetingsComponent} from '../../shared/components';
 import {IContacts, IGreetings} from '../../shared/interfaces';
-import {GreetingsComponent} from '../../shared/components';
+import {ContactsDataService} from '../../shared/services';
 import {GreetingsDataService} from '../../shared/services/greetings-data.service';
+
 
 @Component({
   selector: 'app-main',

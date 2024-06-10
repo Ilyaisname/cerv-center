@@ -1,0 +1,10 @@
+@if (item) {
+  <tui-island textAlign="center">
+    <h3 class="tui-island__title">{{ item.title }}</h3>
+    <p class="tui-island__paragraph">{{ item.description }}</p>
+    <p class="tui-island__paragraph">
+      <tui-money [value]="item.price"></tui-money>
+    </p>
+  </tui-island>
+}
+
