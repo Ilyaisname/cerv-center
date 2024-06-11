@@ -1,1 +1,16 @@
-<p>statistic works!</p>
+<div class="tui-row tui-row_adaptive statistic">
+  <div class="statistic-list tui-col_lg-12 tui-col_md-12 tui-col_xs-12">
+    @if (statisticList) {
+      @for(item of statisticList; track item.id) {
+        <div class="statistic-list-item item">
+          <div class="item-number tui-text_h4 ">
+            {{item.statisticNumber}}
+          </div>
+          <div class="item-about tui-text_body-m-2 tui-space_top-2">
+            {{item.about}}
+          </div>
+        </div>
+      }
+    }
+  </div>
+</div>

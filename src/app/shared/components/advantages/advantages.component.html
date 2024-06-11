@@ -1,0 +1,28 @@
+<div class="tui-row tui-row_adaptive advantages">
+  <div class="advantages-header">
+    @if (title) {
+      <h3 class="tui-text_h3 tui-col_lg-10 tui-col_md-10 tui-col_xs-12"
+          [innerHtml]="title | safe: 'html'"></h3>
+    }
+    @if (description) {
+      <p class="tui-col_lg-10 tui-col_md-10 tui-col_xs-12 tui-space_top-5 tui-text_body-l-2 text tui-space_bottom-16"
+         [innerHtml]="description | safe: 'html'"></p>
+    }
+  </div>
+  @if (advantages) {
+    <div class="tui-col_lg-12 tui-col_md-12 tui-col_xs-12 tui-space_bottom-12 advantages-list">
+      @for(advantage of advantages; track advantage.id) {
+        <div class="advantage tui-col_lg-6 tui-col_md-6 tui-col_xs-12">
+          <tui-icon
+            [icon]="advantage.icon"
+            [style.color]="'var(--tui-primary)'"
+          ></tui-icon>
+          <div class="advantage-title tui-text_h4 tui-space_top-6">{{advantage.header}}</div>
+          <div class="advantage-description text-gray tui-text_body-m-2 tui-space_top-6">{{advantage.description}}</div>
+        </div>
+      } @empty {
+        <div class="advantages-list_empty">Элементов нет</div>
+      }
+    </div>
+  }
+</div>

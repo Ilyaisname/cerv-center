@@ -1,0 +1,48 @@
+@import '@taiga-ui/core/styles/taiga-ui-local.less';
+
+:host {
+  display: block;
+}
+
+.advantages {
+  padding-top: 88px;
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -22.5%;
+    width: 100vw;
+    height: 100%;
+    z-index: 2;
+    background-color: #1D1E25;
+  }
+
+  &-header {
+    color: #ffffff;
+    z-index: 3;
+  }
+
+  // add global style
+  .text-gray {
+    color: #7E8492;
+  }
+
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 3;
+
+    .advantage {
+      display: flex;
+      flex-direction: column;
+
+      .tui-space(bottom, 12);
+
+      &-title {
+        color: #ffffff;
+      }
+    }
+  }
+}

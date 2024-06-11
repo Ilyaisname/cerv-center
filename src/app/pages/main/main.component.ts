@@ -4,10 +4,27 @@ import {TuiButtonModule} from '@taiga-ui/core';
 import {TuiIconModule} from '@taiga-ui/experimental';
 import {TuiLetModule} from '@taiga-ui/cdk';
 import {Observable} from 'rxjs';
-import {ContactsComponent, GreetingsComponent} from '../../shared/components';
-import {IContacts, IGreetings} from '../../shared/interfaces';
+import {
+  AdvantagesComponent,
+  ContactsComponent,
+  GreetingsComponent,
+  QualityComponent,
+  StatisticComponent
+} from '../../shared/components';
+import {
+  IAdvantage,
+  IAdvantageSection,
+  IContacts,
+  IGreetings,
+  IQuality,
+  IQualitySection,
+  IStatistic
+} from '../../shared/interfaces';
 import {ContactsDataService} from '../../shared/services';
 import {GreetingsDataService} from '../../shared/services/greetings-data.service';
+import {AdvantageDataService} from '../../shared/services/advantage-data.service';
+import {QualityDataService} from '../../shared/services/quality-data.service';
+import {StatisticDataService} from '../../shared/services/statistic-data.service';
 
 
 @Component({
@@ -20,7 +37,10 @@ import {GreetingsDataService} from '../../shared/services/greetings-data.service
     ContactsComponent,
     TuiLetModule,
     AsyncPipe,
-    GreetingsComponent
+    GreetingsComponent,
+    AdvantagesComponent,
+    QualityComponent,
+    StatisticComponent
   ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.less'
@@ -28,97 +48,9 @@ import {GreetingsDataService} from '../../shared/services/greetings-data.service
 export class MainComponent {
   greetingsData$: Observable<IGreetings> = inject(GreetingsDataService).getGreetingsDataForMain();
   contactsData$: Observable<IContacts> = inject(ContactsDataService).getContacts();
-  public advantages: IAdvantage[] = [
-    {
-      id: 0,
-      icon: 'tuiIconFileTextLarge',
-      header: 'Широкий спектр услуг',
-      description: 'Мы предлагаем комплексные решения для всех типов ПК и ноутбуков. диагностики и устранения неисправностей до модернизации и оптимизации систем',
-    },
-    {
-      id: 1,
-      icon: 'tuiIconZapLarge',
-      header: 'Быстрое и качественное обслуживание',
-      description: 'Мы ценим ваше время и стремимся выполнять ремонт в кратчайшие сроки. Качество нашей работы подтверждено многочисленными положительными отзывами клиентов',
-    },
-    {
-      id: 2,
-      icon: 'tuiIconPocketLarge',
-      header: 'Гарантия на услуги',
-      description: 'Мы предоставляем гарантию на все виды выполненных работ и установленные комплектующие.\n' +
-        'Вы можете быть уверены в надежности и долговечности нашего ремонта.',
-    },
-    {
-      id: 3,
-      icon: 'tuiIconThumbsUpLarge',
-      header: 'Доступные цены и прозрачность',
-      description: 'Мы предлагаем конкурентоспособные цены на все виды услуг.\n' +
-        'Никаких скрытых платежей – вы всегда знаете, за что платите.',
-    }
-  ]
-  public qualityList: IQuality[] = [
-    {
-      id: 0,
-      icon: 'tuiIconCheckLarge',
-      description: 'Большой выбор матриц для разных моделей ноутбуков',
-    },
-    {
-      id: 1,
-      icon: 'tuiIconCheckLarge',
-      description: 'В нашем ассортименте всегда найдется качественная, подходящая под конкретную модель ноутбука клавиатура',
-    },
-    {
-      id: 2,
-      icon: 'tuiIconCheckLarge',
-      description: 'Высококачественные шлейфы для подключения различных компонентов ноутбука',
-    },
-    {
-      id: 3,
-      icon: 'tuiIconCheckLarge',
-      description: 'Большой выбор термопаст для процессоров и видеокарт, обладающих повышенной теплопроводностью',
-    },
-  ];
-  public statistics: IStatistic[] = [
-    {
-    id: 0,
-    statisticNumber: '200 тысяч',
-    about: 'ремонтов в год',
-    },
-    {
-      id: 1,
-      statisticNumber: '5 лет',
-      about: 'на рынке',
-    },
-    {
-      id: 2,
-      statisticNumber: '90 дней',
-      about: 'Официальная гарантия',
-    },
-    {
-      id: 3,
-      statisticNumber: '3 года',
-      about: 'Средний опыт инженера',
-    },
-  ];
-
-
-}
-
-export interface IAdvantage {
-  id: number;
-  icon: string;
-  header: string;
-  description: string;
-}
-
-export interface IQuality {
-  id: number;
-  icon: string;
-  description: string;
-}
-
-export interface IStatistic {
-  id: number;
-  statisticNumber: string;
-  about: string;
+  advantagesData$: Observable<IAdvantage[]> = inject(AdvantageDataService).advantages$;
+  advantagesDescription$: Observable<IAdvantageSection> = inject(AdvantageDataService).advantageSectionDescription$;
+  qualityData$: Observable<IQuality[]> = inject(QualityDataService).qualityList$;
+  qualityDescription$: Observable<IQualitySection> = inject(QualityDataService).qualityDescription$;
+  statistics$: Observable<IStatistic[]> = inject(StatisticDataService).statisticData$;
 }
