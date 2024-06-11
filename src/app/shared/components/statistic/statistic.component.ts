@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {IStatistic} from '../../interfaces';
 
 @Component({
   selector: 'app-statistic',
@@ -8,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrl: './statistic.component.less'
 })
 export class StatisticComponent {
-
+  @Input() statisticList: IStatistic[] | null | undefined;
 }

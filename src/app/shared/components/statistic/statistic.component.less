@@ -1,0 +1,41 @@
+:host {
+  display: block;
+}
+
+.statistic {
+  padding-top: 4.5rem;
+
+  &-list {
+    display: flex;
+    justify-content: space-between;
+
+    .item {
+      position: relative;
+
+      &-about {
+        color: #7E8492;
+        padding-bottom: 15px;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 10%;
+        right: -2.7rem;
+        width: 1px;
+        height: 80%;
+        background-color: #CED1D8;
+
+      }
+
+      &:last-child {
+        &:after {
+          content: '';
+          width: 0;
+          height: 0;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}

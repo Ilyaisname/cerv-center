@@ -2,3 +2,8 @@ export * from './contacts';
 export * from './tabs';
 export * from './greetings'
 export * from './posts';
+export * from './advantages';
+export * from './catalog';
+export * from './naviTabs';
+export * from './statistic';
+export * from './quality';

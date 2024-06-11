@@ -3,3 +3,7 @@ export * from './tabs';
 export * from './greetings';
 export * from './posts';
 export * from './catalog';
+export * from './advantage';
+export * from './statistic';
+export * from './quality';
+export * from './shared';

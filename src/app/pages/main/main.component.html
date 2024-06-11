@@ -1,83 +1,58 @@
 <ng-container *tuiLet="{
   greetingsData: greetingsData$ | async,
+  advantages: {
+    list: advantagesData$ | async,
+    description: advantagesDescription$ | async,
+  },
+  quality: {
+    list: qualityData$ | async,
+    description: qualityDescription$ | async,
+  },
+  statistics: statistics$ | async,
+  contacts: contactsData$ | async
 } as data">
+  <!-- greetings -->
+
   <app-greetings
     [headerText]="data.greetingsData!.headerText"
     [text]="data.greetingsData!.text"
     [imagePath]="data.greetingsData!.imagePath"
     [repairRequest]="data.greetingsData!.repairRequest"
   />
-</ng-container>
-<div class="tui-row tui-row_adaptive advantages-block">
-  <div class="header">
-    <h3 class="tui-text_h3 tui-col_lg-10 tui-col_md-10 tui-col_xs-12">Комплексный Ремонт ПК<br>
-      Быстро и Надежно</h3>
-    <p class="tui-col_lg-10 tui-col_md-10 tui-col_xs-12 tui-space_top-5 tui-text_body-l-2 text tui-space_bottom-16">Наш сервис предоставляет качественные услуги по ремонту
-    и обслуживанию персональных компьютеров и ноутбуков</p>
-  </div>
-  <div class="tui-col_lg-12 tui-col_md-12 tui-col_xs-12 advantages">
-      @for(advantage of advantages; track advantage.id) {
-        <div class="advantage tui-col_lg-6 tui-col_md-6 tui-col_xs-12">
-          <tui-icon
-            [icon]="advantage.icon"
-            [style.color]="'var(--tui-primary)'"
-          ></tui-icon>
-          <div class="header tui-text_h4 tui-space_top-6">{{advantage.header}}</div>
-          <div class="text tui-text_body-m-2 tui-space_top-6">{{advantage.description}}</div>
-        </div>
-      }
-  </div>
-</div>
-<div class="tui-row tui-row_adaptive quality-block">
-  <div class="picture tui-col_lg-6 tui-col_md-6 tui-col_xs-12">
-    <div class="img-wrapper">
-      <img [ngSrc]="'assets/img/main/zp.png'" alt="zapchasti" fill>
-    </div>
-  </div>
-  <div class="description tui-col_lg-6 tui-col_md-6 tui-col_xs-12">
-    <div class="header tui-text_h3 tui-space_bottom-12">Качественные детали на популярные
-      модели всегда в наличии</div>
-    <div class="text tui-text_body-l-2 text tui-space_bottom-10">
-      В нашем ассортименте всегда найдется качественные комплектующие, подходящие под конкретную модель ноутбука.
-    </div>
-    <div class="quality-list">
-      @for(quality of qualityList; track quality.id) {
-        <div class="quality tui-space_bottom-9">
-          <div class="icon tui-space_right-5">
-            <tui-icon
-              [icon]="quality.icon"
-              [style.color]="'var(--tui-primary)'"
-            ></tui-icon>
-          </div>
-          <div class="description tui-text_body-l-2">
-            {{quality.description}}
-          </div>
-        </div>
-      }
-    </div>
-  </div>
-</div>
-<div class="tui-row tui-row_adaptive statistic-block">
-  <div class="statistic tui-col_lg-12 tui-col_md-12 tui-col_xs-12">
-    @for(stat of statistics; track stat.id) {
-      <div class="statistic-card">
-        <div class="statistic-number tui-text_h4 ">
-          {{stat.statisticNumber}}
-        </div>
-        <div class="statistic-about tui-text_body-m-2 tui-space_top-2">
-          {{stat.about}}
-        </div>
-      </div>
-    }
-  </div>
-</div>
-<ng-container *tuiLet="contactsData$ | async as contacts">
+
+  <!-- end greetings -->
+
+  <!--  advantages -->
+  <app-advantages
+    [advantages]="data.advantages.list"
+    [title]="data.advantages.description?.title"
+    [description]="data.advantages.description?.description"
+  />
+  <!-- end advantages -->
+
+  <!-- quality -->
+   <app-quality
+     [qualityList]="data.quality.list"
+     [title]="data.quality.description?.title"
+     [description]="data.quality.description?.description"
+     imagePath="assets/img/main/zp.png"
+   />
+  <!-- end quality-->
+
+  <!-- statistic -->
+  <app-statistic
+    [statisticList]="data.statistics"
+  />
+  <!-- end statistic-->
+
+  <!-- contacts-->
   <app-contacts
     imagePath="assets/img/map.png"
-    [phoneNumbers]="contacts?.phoneNumbers"
-    [address]="contacts?.address"
-    [workTime]="contacts?.workTime"
-    [workMode]="contacts?.workMode"
-    [mail]="contacts?.email"
+    [phoneNumbers]="data.contacts?.phoneNumbers"
+    [address]="data.contacts?.address"
+    [workTime]="data.contacts?.workTime"
+    [workMode]="data.contacts?.workMode"
+    [mail]="data.contacts?.email"
   />
+  <!-- end contacts-->
 </ng-container>
