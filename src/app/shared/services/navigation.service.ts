@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
-import {naviTabs} from '../staticData/naviTabs';
+import {naviTabs} from '../staticData';
 
 @Injectable({
   providedIn: 'root'
 })
 export class NavigationService {
-
-  constructor() { }
 
   getTabs() {
     return naviTabs;

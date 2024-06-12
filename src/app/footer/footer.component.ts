@@ -1,6 +1,5 @@
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {NgOptimizedImage} from '@angular/common';
-import {tabs} from '../shared/staticData';
 import {NavigationService} from '../shared/services/navigation.service';
 import {RouterLink} from '@angular/router';
 

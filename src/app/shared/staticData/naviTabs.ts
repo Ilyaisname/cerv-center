@@ -1,6 +1,6 @@
-import {ITabs} from '../interfaces';
+import {ITab} from '../interfaces';
 
-export const naviTabs: ITabs[] = [
+export const naviTabs: ITab[] = [
   {
     name: 'Главная',
     url: '/',
