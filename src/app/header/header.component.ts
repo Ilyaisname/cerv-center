@@ -3,7 +3,7 @@ import {TuiActiveZoneModule} from '@taiga-ui/cdk';
 import {TuiTabsModule} from '@taiga-ui/kit';
 import {TuiDataListModule, TuiHostedDropdownModule, TuiModeModule, TuiSvgModule} from '@taiga-ui/core';
 import {NgForOf, NgIf} from '@angular/common';
-import {RouterLink} from '@angular/router';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 import {NavigationService} from '../shared/services/navigation.service';
 
 @Component({
@@ -18,7 +18,8 @@ import {NavigationService} from '../shared/services/navigation.service';
     TuiActiveZoneModule,
     NgIf,
     TuiModeModule,
-    RouterLink
+    RouterLink,
+    RouterLinkActive
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.less',
@@ -26,14 +27,4 @@ import {NavigationService} from '../shared/services/navigation.service';
 })
 export class HeaderComponent {
   readonly tabs = inject(NavigationService).getTabs();
-
-  activeElement = String(this.tabs[0].name);
-
-  get activeItemIndex(): number {
-    return this.tabs.findIndex(tab => tab.name === this.activeElement) || 0;
-  }
-
-  onClick(activeElement: string): void {
-    this.activeElement = activeElement;
-  }
 }
