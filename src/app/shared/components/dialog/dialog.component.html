@@ -1,0 +1,53 @@
+<div class="dialog">
+  <tui-input
+    class="tui-space_bottom-4"
+    tuiAutoFocus
+    tuiTextfieldSize="m"
+    [(ngModel)]="name"
+  >
+    Имя
+  </tui-input>
+  <tui-input
+    class="tui-space_bottom-4"
+    tuiAutoFocus
+    tuiTextfieldSize="m"
+    [(ngModel)]="lastName"
+  >
+    Фамилия
+  </tui-input>
+  <tui-input
+    class="tui-space_bottom-4"
+    tuiAutoFocus
+    tuiTextfieldSize="m"
+    [(ngModel)]="phone"
+  >
+    телефон
+  </tui-input>
+  <tui-input
+    class="tui-space_bottom-4"
+    tuiAutoFocus
+    tuiTextfieldSize="m"
+    [(ngModel)]="email"
+  >
+    Электронная почта
+  </tui-input>
+  <tui-input
+    class="tui-space_bottom-4"
+    tuiAutoFocus
+    tuiTextfieldSize="m"
+    [(ngModel)]="question"
+  >
+    Опишите проблему
+  </tui-input>
+
+  <button
+    size="m"
+    tuiButton
+    type="button"
+    [disabled]="!hasValue"
+    (click)="submit()"
+  >  Отправить
+  </button>
+</div>
+
+

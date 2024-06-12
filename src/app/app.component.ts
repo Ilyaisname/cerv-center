@@ -14,5 +14,4 @@ import {FooterComponent} from './footer/footer.component';
     providers: [{provide: TUI_SANITIZER, useClass: NgDompurifySanitizer}]
 })
 export class AppComponent {
-  title = 'Ебаный случай';
 }

@@ -5,28 +5,32 @@
   color: #1D1E25;
 }
 
-.wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.title {
-  min-width: 20.625rem;
-  margin: 0;
-  cursor: pointer;
-}
-
-.tabs {
-  width: ~'calc(100% - 15.625rem)';
-  justify-content: flex-end;
-  box-shadow: none;
-}
-
-.icon {
-  .transition(transform);
-  margin-left: 0.25rem;
-
-  &_rotated {
-    transform: rotate(180deg);
+.header {
+  &-wrapper {
+    display: flex;
+    align-items: center;
   }
+
+  .icon {
+    .transition(transform);
+    margin-left: 0.25rem;
+
+    &_rotated {
+      transform: rotate(180deg);
+    }
+  }
+
+  .title {
+    min-width: 20.625rem;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  .tabs {
+    width: ~'calc(100% - 15.625rem)';
+    justify-content: flex-end;
+    box-shadow: none;
+  }
+
 }
+

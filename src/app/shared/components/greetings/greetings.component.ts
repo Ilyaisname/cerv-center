@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {NgClass, NgIf, NgOptimizedImage} from '@angular/common';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {NgClass, NgOptimizedImage} from '@angular/common';
 import {TuiButtonModule} from '@taiga-ui/core';
 import {SafePipe} from '../../pipes/safe.pipe';
 
@@ -21,6 +21,8 @@ export class GreetingsComponent implements OnInit {
   @Input() imagePath: string | undefined = undefined;
   @Input() repairRequest: boolean | undefined = false;
 
+  @Output() newRepairRequest: EventEmitter<unknown> = new EventEmitter();
+
   companyNameStyleGreed: Record<string, boolean> = {};
 
   ngOnInit() {
@@ -36,4 +38,7 @@ export class GreetingsComponent implements OnInit {
     }
   }
 
+  sentRepairRequest(event: unknown) {
+    this.newRepairRequest.emit(event);
+  }
 }

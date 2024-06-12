@@ -12,14 +12,13 @@
   contacts: contactsData$ | async
 } as data">
   <!-- greetings -->
-
   <app-greetings
     [headerText]="data.greetingsData!.headerText"
     [text]="data.greetingsData!.text"
     [imagePath]="data.greetingsData!.imagePath"
     [repairRequest]="data.greetingsData!.repairRequest"
+    (newRepairRequest)="showDialog()"
   />
-
   <!-- end greetings -->
 
   <!--  advantages -->

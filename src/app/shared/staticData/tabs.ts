@@ -1,6 +1,6 @@
-import {ITabs} from '../interfaces/tabs';
+import {ITab} from '../interfaces';
 
-export const tabs : ITabs[] = [
+export const tabs : ITab[] = [
   {
     name: 'Главная',
     url: '/'
@@ -10,7 +10,7 @@ export const tabs : ITabs[] = [
     url: '/about'
   },
   {
-    name: 'Каталог',
+    name: 'Услуги',
     url: '/catalog'
   },
 ]
