@@ -34,3 +34,30 @@
 
 }
 
+.mobile-header {
+  display: none;
+}
+
+@media @tui-tablet-min {
+
+}
+
+@media @tui-mobile {
+  .mobile-header {
+    display: flex;
+    justify-content: space-between;
+
+    .burger-icon {
+      tui-svg {
+        font-size: 50px;
+        width: 50px;
+        height: 55px;
+      }
+    }
+  }
+
+  .header {
+    display: none;
+  }
+}
+

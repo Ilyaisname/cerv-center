@@ -4,6 +4,13 @@
     <p class="tui-island__paragraph">{{ item.description }}</p>
     <p class="tui-island__paragraph price-align_left">
       <tui-money [value]="item.price"></tui-money>
+      <button
+        tuiButton size="s"
+        type="button"
+        class="tui-space_left-3"
+        (click)="sentRepairRequest()">
+        Записаться
+      </button>
     </p>
   </tui-island>
 }

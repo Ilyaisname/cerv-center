@@ -31,26 +31,32 @@ export const posts: IPost[] = [
 export const employeePosts: IEmployeePost[] = [
   {
     imgSrc: 'assets/employee/employee1.png',
-    name: ''
+    name: 'Иван Воронов',
+    position: 'Главный инженер'
   },
   {
     imgSrc: 'assets/employee/employee2.png',
-    name: ''
+    name: 'Дмитрий Забугор',
+    position: 'Генепальный директор'
   },
   {
     imgSrc: 'assets/employee/employee3.png',
-    name: ''
+    name: 'Василий Алибабаевич',
+    position: 'Инженер по ремонту'
   },
   {
     imgSrc: 'assets/employee/employee4.png',
-    name: ''
+    name: 'Герман Сотников',
+    position: 'Инженер по ремонту'
   },
   {
     imgSrc: 'assets/employee/employee5.png',
-    name: ''
+    name: 'Клавдия Петровна',
+    position: 'Администратор'
   },
   {
     imgSrc: 'assets/employee/employee7.png',
-    name: ''
+    name: 'Вероника Стрезубец',
+    position: 'Администратор'
   },
 ]

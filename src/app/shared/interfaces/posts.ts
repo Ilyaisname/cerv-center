@@ -7,4 +7,5 @@ export interface IPost {
 export interface IEmployeePost {
   imgSrc: string;
   name: string;
+  position: string;
 }

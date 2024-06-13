@@ -1,0 +1,55 @@
+<div class="request-form">
+  <tui-input
+    class="tui-space_bottom-4"
+    tuiAutoFocus
+    tuiTextfieldSize="l"
+    [(ngModel)]="title"
+  >
+    Выбранная услуга
+  </tui-input>
+  <tui-input-number
+    class="tui-space_bottom-4"
+    tuiHintContent="Стоимость указывается только за работу и является примерной, окончательную цену озвучит сотрудник после консультации"
+    [(ngModel)]="price"
+    tuiTextfieldSize="l"
+    [tuiTextfieldPrefix]="'RUB' | tuiCurrency"
+  >
+    Cтоимость работы
+  </tui-input-number>
+  <tui-input
+    class="tui-space_bottom-4"
+    tuiAutoFocus
+    tuiTextfieldSize="l"
+    [(ngModel)]="contactName"
+  >
+    Как к вам обращаться
+  </tui-input>
+  <tui-input-phone
+    class="tui-space_bottom-4"
+    tuiAutoFocus
+    tuiTextfieldSize="l"
+    [(ngModel)]="phoneNumber"
+  >
+    Телефон для связи
+      <input
+        autocomplete="tel"
+        tuiTextfield
+      />
+
+  </tui-input-phone>
+  <tui-textarea
+    class="tui-space_bottom-8"
+    tuiAutoFocus
+    tuiTextfieldSize="l"
+    [(ngModel)]="dopInfo">Напишите дополнительную информацию
+  </tui-textarea>
+
+  <button
+    size="m"
+    tuiButton
+    type="button"
+    [disabled]="!hasValue"
+    (click)="submit()"
+  >  Отправить
+  </button>
+</div>
