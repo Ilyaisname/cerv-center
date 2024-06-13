@@ -1,5 +1,5 @@
 import {Component, Inject} from '@angular/core';
-import {TuiButtonModule, TuiDialogContext, TuiDialogService, TuiTextfieldControllerModule} from '@taiga-ui/core';
+import {TuiButtonModule, TuiDialogContext, TuiTextfieldControllerModule} from '@taiga-ui/core';
 import { POLYMORPHEUS_CONTEXT } from '@tinkoff/ng-polymorpheus';
 import {TuiInputModule} from '@taiga-ui/kit';
 import {TuiAutoFocusModule} from '@taiga-ui/cdk';
@@ -26,7 +26,6 @@ export class DialogComponent {
   question: string | null = null;
 
   constructor(
-    @Inject(TuiDialogService) private readonly dialogs: TuiDialogService,
     @Inject(POLYMORPHEUS_CONTEXT)
     private readonly context: TuiDialogContext<unknown, unknown>,) {
   }

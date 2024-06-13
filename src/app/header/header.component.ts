@@ -19,7 +19,7 @@ import {NavigationService} from '../shared/services/navigation.service';
     NgIf,
     TuiModeModule,
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.less',
